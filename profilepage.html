@@ -57,7 +57,7 @@
             <a href="homepage.html"><i class="glyphicon glyphicon-home"></i></a>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i><span class="label label-warning label-as-badge">1</span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
             <ul class="dropdown-menu">
               <center>
                 <li><img class="img-circle" src="http://placehold.it/30x30"> {{data.Name}}</li> 
@@ -85,10 +85,10 @@
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i><span class="label label-info label-as-badge">3</span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università <span class="label label-info label-as-badge">2</span></a></li>
-                <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}} <span class="label label-info label-as-badge">1</span></a></li>
+                <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università</a></li>
+                <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}}</a></li>
                 <li class="divider"></li>
                 <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
               </ul>
@@ -114,8 +114,11 @@
 
     <div class="container">
       <div class="col-md-3">
-        <h3><a href="#"><img src="profile.png" class="profile-image img-circle" height="30" width="30"> {{data.Name}}</a></h3>
-        <p><a href="#">{{Profile Page}}</a></p>
+        <h3><a href="#"><img src="profile.png" class="profile-image img-circle" height="200" width="200"></a></h3>
+        <p><a href="#">{{data.Name}}</a></p>
+        <p><a href="#">{{data.Compleanno}}</a></p>
+        <p><a href="#">{{data.Dipartimento}}</a></p>
+        <p><a href="#">{{data.AnnoDiCorso}}</a></p>
         <p><a href="#"><i class="glyphicon glyphicon-pencil"></i> Edit {{data.Name}} Profile</a></p>
         <h4><a href="#"><i class="glyphicon glyphicon-calendar"></i> Calendario Lezioni</a></h4>
         <h4><a href="navette.html"><i class="glyphicon glyphicon-time"></i> Orari Navette</a></h4>
@@ -126,43 +129,7 @@
       </div>
 
       <div class="col-md-9">
-        <div class="well">
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-pencil"></i> Scrivi Post</a></li>
-            <li><a data-toggle="tab" href="#photovideo">Upload <i class="glyphicon glyphicon-picture"></i>  Immagini / <i class="glyphicon glyphicon-facetime-video"></i>  Video</a></li>
-            <li><a data-toggle="tab" href="#file">Upload <i class="glyphicon glyphicon-file"></i> File</a></li>
-            <li class="divisor"></li>
-          </ul>
-
-            <div class="tab-content">
-              <div id="home" class="tab-pane fade in active">
-                <h4>Scrivi Post</h4>
-                <form role="form">
-                  <div class="group-form">
-                    <textarea class="form-control" rows="4"></textarea>
-                  </div>
-                  <br>
-                  <button type="submit" class="btn btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button>
-                  <br>
-                </form>
-              </div>
-              <div id="photovideo" class="tab-pane fade">
-                <h4>Inserisci <i class="glyphicon glyphicon-picture"></i>  / <i class="glyphicon glyphicon-facetime-video"></i></h4>
-                <p>Seleziona e carica file.
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
-                <br></p>
-                <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
-              </div>
-              <div id="file" class="tab-pane fade">
-                <h4>Inserisci <i class="glyphicon glyphicon-file"></i></h4>
-                <p>Seleziona e carica file.
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
-                <br></p>
-                <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
-              </div>
-            </div>
-          </div>
-
+        
         <div class="well">
           <h2>{{ Caricamento Contenuti }}</h2>
           <p>{{ Caricamento dei contenuti, leggendo file BSON salvati in MongoDB tramite node.js, e visualizzandoli qui grazie ad AngularJS }}</p>

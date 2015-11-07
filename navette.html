@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mango</title>
+  <link rel="shortcut icon" href="logo.png">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="js/ie-emulation-modes-warning.js"></script>
+
+  <!-- ANGULARJS Import -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img alt="Mango" src="logo.png" class="navbar-brand">
+        <a class="navbar-brand" href="homepage.html">Mango</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <div class="input-group">
+                  <input id="InputSearch" type="text" class="form-control" name="search" placeholder="Search for..." required> 
+                  <span class="input-group-addon btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="homepage.html"><i class="glyphicon glyphicon-home"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+            <ul class="dropdown-menu">
+              <center>
+                <li><img class="img-circle" src="http://placehold.it/30x30"> {{data.Name}}</li> 
+                <li>Aggiungi Collega <br></li>
+                <li>
+                  <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-ok-sign"></i></button>
+                  <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-remove-sign"></i></button>
+                </li>
+                <li class="divider"></li>
+              </center>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i></a>
+            <ul class="dropdown-menu">
+              <li>{{data.Messages}} </li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-globe"></i></a>
+            <ul class="dropdown-menu">
+              <li>{{data.Notification}} </li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università</a></li>
+              <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}}</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="profile.png" class="profile-image img-circle" height="18" width="18"> {{data.Name}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profilepage.html"><i class="glyphicon glyphicon-cog"></i> Account</a></li>
+                <li>
+                  <a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="index.html"><i class="glyphicon glyphicon-log-out "></i> Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="col-md-3">
+        <h3><a href="#"><img src="profile.png" class="profile-image img-circle" height="30" width="30"> {{data.Name}}</a></h3>
+        <p><a href="#">{{Profile Page}}</a></p>
+        <p><a href="#"><i class="glyphicon glyphicon-pencil"></i> Edit {{data.Name}} Profile</a></p>
+        <h4><a href="#"><i class="glyphicon glyphicon-calendar"></i> Calendario Lezioni</a></h4>
+        <h4><a href="navette.html"><i class="glyphicon glyphicon-time"></i> Orari Navette</a></h4>
+        <h4><a href="#"><i class="glyphicon glyphicon-th-large"></i> Gruppi</a></h4>
+        <h5><a href="#"><i class="glyphicon glyphicon-plus"></i> Crea Gruppi</a></h5>
+        <p><a href="#">{{Group 1}}</a></p>
+        <p><a href="#">{{Group 2}}</a></p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="well">
+          <h2>Orari polo Annunziata</h2>
+          <p><table class="table table-bordered table-hover table-condensed">
+            <tbody><thead>
+              <tr><td>Terminal Metromare</td>
+                <td>Capolinea Tram</td>
+                <td>Polo Annunziata</td>
+              </tr>
+              <tr><td>Partenza</td>
+                <td>Partenza</td>
+                <td>Partenza</td>
+              </tr>
+              </thead>
+              <tr><td>7.35</td>
+                <td>7.40</td>
+                <td>7.50</td>
+              </tr>
+              <tr><td> </td>
+                <td>8.10</td>
+                <td>8.20</td>
+              </tr>
+              <tr><td> </td>
+                <td>8.35</td>
+                <td>8.50</td>
+              </tr>
+              <tr><td>8.45</td>
+                <td>8.50</td>
+                <td>9.00</td>
+              </tr>
+              <tr><td> </td>
+                <td>9.10</td>
+                <td>9.20</td>
+              </tr>
+              <tr><td> </td>
+                <td>9.35</td>
+                <td>9.45</td>
+              </tr>
+              <tr><td> </td>
+                <td>9.50</td>
+                <td>10.20</td>
+              </tr>
+              <tr><td> </td>
+                <td>10.30</td>
+                <td>////////////////</td>
+              </tr>
+              <tr><td> </td>
+                <td>10.45</td>
+                <td>11.10</td>
+              </tr>
+              <tr><td> </td>
+                <td>11.20</td>
+                <td>11.40</td>
+              </tr>
+              <tr><td> </td>
+                <td>12.10</td>
+                <td>12.30</td>
+              </tr>
+              <tr><td> </td>
+                <td>13.00</td>
+                <td>13.05</td>
+              </tr>
+              <tr><td> </td>
+                <td>///////////////</td>
+                <td>13.35 (*)</td>
+              </tr>
+              <tr><td> </td>
+                <td>13.45</td>
+                <td>14.10</td>
+              </tr>
+              <tr><td> </td>
+                <td>14.30</td>
+                <td>14.45</td>
+              </tr>
+              <tr><td> </td>
+                <td>15.10</td>
+                <td>15.30</td>
+              </tr>
+              <tr><td> </td>
+                <td>16.00</td>
+                <td>16.20</td>
+              </tr>
+              <tr><td> </td>
+                <td>17.00</td>
+                <td>17.20</td>
+              </tr>
+              <tr><td> </td>
+                <td>17.50</td>
+                <td>18.10</td>
+              </tr>
+            </tbody>
+            <tfoot><tr>(*) n. 1 Corsa Speciale fino al Molo “L Rizzo” - Terminal Metromare</tr></tfoot></table></p>
+          </div>
+        </div>
+
+      <div class="col-md-4">
+        <div class="well">
+            <h2>Orari polo Papardo</h2>
+            <p><table class="table table-bordered table-hover table-condensed">
+              <tbody>
+                <thead>
+                  <tr>
+                    <td>Terminal Metromare</td>
+                    <td>Capolinea Tram</td>
+                    <td>Scienze MM.FF.NN.</td>
+                    <td>Ingegneria</td>
+                  </tr>
+                  <tr>
+                    <td>Partenza</td>
+                    <td>Partenza</td>
+                    <td>Partenza</td>
+                    <td>Partenza</td>
+                  </tr>
+                </thead>
+                <tr><td>7.35</td>
+                  <td>7.42</td>
+                  <td>7.55</td>
+                  <td>8.00</td>
+                </tr>
+                <tr><td> </td>
+                  <td>8.12</td>
+                  <td>8.25</td>
+                  <td>8.30</td>
+                </tr>
+                <tr><td> </td>
+                  <td>8.37</td>
+                  <td>8.55</td>
+                  <td>9.00</td>
+                </tr>
+                <tr><td>8.45</td>
+                  <td>8.47</td>
+                  <td>8.55</td>
+                  <td>9.00</td>
+                </tr>
+                <tr><td> </td>
+                  <td>8.52</td>
+                  <td>9.05</td>
+                  <td>9.10</td>
+                </tr>
+                <tr><td> </td>
+                  <td>9.12</td>
+                  <td>9.30</td>
+                  <td>9.35</td>
+                </tr>
+                <tr><td> </td>
+                  <td>9.32</td>
+                  <td>9.45</td>
+                  <td>9.50</td>
+                </tr>
+                <tr><td> </td>
+                  <td>9.52</td>
+                  <td>10.05</td>
+                  <td>10.10</td>
+                </tr>
+                <tr><td> </td>
+                  <td>10.32</td>
+                  <td>10.45</td>
+                  <td>10.50</td>
+                </tr>
+                <tr><td> </td>
+                  <td>11.12</td>
+                  <td>11.25</td>
+                  <td>11.30</td>
+                </tr>
+                <tr><td> </td>
+                  <td>11.52</td>
+                  <td>12.05</td>
+                  <td>12.10</td>
+                </tr>
+                <tr><td> </td>
+                  <td>13.02</td>
+                  <td>13.15 (*)</td>
+                  <td>13.20 (*)</td>
+                </tr>
+                <tr><td> </td>
+                  <td>13.52</td>
+                  <td>14.10</td>
+                  <td>14.15</td>
+                </tr>
+                <tr><td> </td>
+                  <td>14.32</td>
+                  <td>15.00</td>
+                  <td>15.05</td>
+                </tr>
+                <tr><td> </td>
+                  <td>15.12</td>
+                  <td>15.40</td>
+                  <td>15.45</td>
+                </tr>
+                <tr><td> </td>
+                  <td>16.32</td>
+                  <td>16.50</td>
+                  <td>16.55</td>
+                </tr>
+                <tr><td> </td>
+                  <td>17.02</td>
+                  <td>17.20</td>
+                  <td>17.25</td>
+                </tr>
+                <tr><td> </td>
+                  <td>17.32</td>
+                  <td>18.10</td>
+                  <td>18.15</td>
+                </tr>
+              </tbody>
+              <tfoot><tr>(*) n. 1 Corsa Speciale fino al Molo “L Rizzo” - Terminal Metromare</tr></tfoot></table></p>          
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Copyright &copy; Salvo Bertoncini 2016</p>
+          </div>
+        </footer>
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
