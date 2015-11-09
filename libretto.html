@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,17 +16,21 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- ANGULARJS Import -->
+  <script src= "js/angular.min.js"></script>
+  <script src= "js/angular-route.min.js"></script>
+
+  <script src="angular/libretto.js"></script>
+
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="js/ie-emulation-modes-warning.js"></script>
 
-  <!-- ANGULARJS Import -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-
 </head>
 
 <body>
-<!-- Fixed navbar -->
+
+  <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -48,7 +52,7 @@
                   <input id="InputSearch" type="text" class="form-control" name="search" placeholder="Search for..." required> 
                   <span class="input-group-addon btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></span>
                 </div>
-                </div>
+              </div>
             </form>
           </li>
         </ul>
@@ -57,7 +61,7 @@
             <a href="homepage.html"><i class="glyphicon glyphicon-home"></i></a>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i><span class="label label-warning label-as-badge">1</span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
             <ul class="dropdown-menu">
               <center>
                 <li><img class="img-circle" src="http://placehold.it/30x30"> {{data.Name}}</li> 
@@ -85,14 +89,14 @@
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i><span class="label label-info label-as-badge">3</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università <span class="label label-info label-as-badge">2</span></a></li>
-                <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}} <span class="label label-info label-as-badge">1</span></a></li>
-                <li class="divider"></li>
-                <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
-              </ul>
-            </li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università</a></li>
+              <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}}</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="profile.png" class="profile-image img-circle" height="18" width="18"> {{data.Name}} <b class="caret"></b></a>
@@ -127,55 +131,56 @@
       </div>
 
       <div class="col-md-9">
-        <div class="well">
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-pencil"></i> Scrivi Post</a></li>
-            <li><a data-toggle="tab" href="#photovideo">Upload <i class="glyphicon glyphicon-picture"></i>  Immagini / <i class="glyphicon glyphicon-facetime-video"></i>  Video</a></li>
-            <li><a data-toggle="tab" href="#file">Upload <i class="glyphicon glyphicon-file"></i> File</a></li>
-            <li class="divisor"></li>
-          </ul>
+        <div class="well" ng-app="libretto" ng-controller="librettoCtrl as todoList">
+        <h2>Libretto Universitario</h2>
+        <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+          <p><b>Media Aritmetica: {{todoList.media()}}</b>  <b>Media Ponderata:</b>  <b>Base di Laurea:</b> 
+        
+        <form ng-submit="todoList.addTodo()"> 
+          <input type="text" ng-model="todoList.todoNome"  size="12" placeholder="aggiungi materia">
+          <input type="text" ng-model="todoList.todoCrediti"  size="2" placeholder="crediti">
+          <input type="text" ng-model="todoList.todoVoto"  size="2" placeholder="voto">
+          <input type="text" ng-model="todoList.todoData"  size="4" placeholder="data">
+          <input type="text" ng-model="todoList.todoProf"  size="10" placeholder="prof">
+          <input type="text" ng-model="todoList.todoNote"  size="10" placeholder="note">
+          <button type="submit" class="btn btn-warning pull-right" value="add"><i class="glyphicon glyphicon-plus"></i></button></p><br>
+        </form>
 
-            <div class="tab-content">
-              <div id="home" class="tab-pane fade in active">
-                <h4>Scrivi Post</h4>
-                <form role="form">
-                  <div class="group-form">
-                    <textarea class="form-control" rows="4"></textarea>
-                  </div>
-                  <br>
-                  <button type="submit" class="btn btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button>
-                  <br>
-                </form>
-              </div>
-              <div id="photovideo" class="tab-pane fade">
-                <h4>Inserisci <i class="glyphicon glyphicon-picture"></i>  / <i class="glyphicon glyphicon-facetime-video"></i></h4>
-                <p>Seleziona e carica file.
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
-                <br></p>
-                <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
-              </div>
-              <div id="file" class="tab-pane fade">
-                <h4>Inserisci <i class="glyphicon glyphicon-file"></i></h4>
-                <p>Seleziona e carica file.
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
-                <br></p>
-                <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
-              </div>
-            </div>
+          <p><table class="responsive table table-bordered table-hover table-condensed">
+            <thead>
+              <tr>
+                <td><button  ng-click="todoList.archive()"class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button></td>
+                <td>Materia</td>
+                <td>Crediti</td>
+                <td>Voto</td>
+                <td>Data Esame</td>
+                <td>Prof.</td>
+                <td>Note</td>
+                <td></td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="todo in todoList.todos">
+                <td><input type="checkbox" ng-model="todo.done"></td>
+                <td><span class="done-{{todo.done}}">{{todo.nome}}</span></td>
+                <td><span class="done-{{todo.done}}">{{todo.crediti}}</span></td>
+                <td><span class="done-{{todo.done}}">{{todo.voto}}</span></td>
+                <td><span class="done-{{todo.done}}">{{todo.data}}</span></td>
+                <td><span class="done-{{todo.done}}">{{todo.prof}}</span></td>
+                <td><span class="done-{{todo.done}}">{{todo.note}}</span></td>
+                <td><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button></td>
+              </tr>
+            </tbody>
+            </table>
+          </p>
           </div>
-
-        <div class="well">
-          <h2>{{ Caricamento Contenuti }}</h2>
-          <p>{{ Caricamento dei contenuti, leggendo file BSON salvati in MongoDB tramite node.js, e visualizzandoli qui grazie ad AngularJS }}</p>
-        </div>
       </div>
-    </div>
 
-      <footer class="footer">
-        <div class="container">
-          <p class="text-muted">Copyright &copy; Salvo Bertoncini 2016</p>
-        </div>
-      </footer>
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Copyright &copy; Salvo Bertoncini 2016</p>
+          </div>
+        </footer>
 
 <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -184,5 +189,6 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="js/ie10-viewport-bug-workaround.js"></script>
+
 </body>
 </html>
