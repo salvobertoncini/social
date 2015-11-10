@@ -24,7 +24,7 @@ $scope.errorColor="warning";
 $scope.errorMex="Campo Richiesto";
 
 $scope.utenteRegistrazione={nome:"", cognome:"", password:"", email:"", email2:"", compleanno:"", dipartimento:""};
-
+  
   $scope.registration = function() {
     /*$http.post('path/to/server/file/to/save/json', $scope.languages).then(function(data) {
       $scope.msg = 'Data saved';

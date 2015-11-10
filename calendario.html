@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +16,12 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- ANGULARJS Import -->
-  <script src= "js/angular.min.js"></script>
-  <script src= "js/angular-route.min.js"></script>
-
-  <script src="angular/libretto.js"></script>
-
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="js/ie-emulation-modes-warning.js"></script>
+
+  <!-- ANGULARJS Import -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 
 </head>
 
@@ -121,7 +118,7 @@
         <h3><a href="#"><img src="profile.png" class="profile-image img-circle" height="30" width="30"> {{data.Name}}</a></h3>
         <p><a href="#">{{Profile Page}}</a></p>
         <p><a href="#"><i class="glyphicon glyphicon-pencil"></i> Edit {{data.Name}} Profile</a></p>
-        <h4><a href="calendario.html"><i class="glyphicon glyphicon-calendar"></i> Calendario Lezioni</a></h4>
+        <h4><a href="#"><i class="glyphicon glyphicon-calendar"></i> Calendario Lezioni</a></h4>
         <h4><a href="libretto.html"><i class="glyphicon glyphicon-list-alt"></i> Libretto Universitario</a></h4>
         <h4><a href="navette.html"><i class="glyphicon glyphicon-time"></i> Orari Navette</a></h4>
         <h4><a href="#"><i class="glyphicon glyphicon-th-large"></i> Gruppi</a></h4>
@@ -131,55 +128,105 @@
       </div>
 
       <div class="col-md-9">
-        <div class="well" ng-app="libretto" ng-controller="librettoCtrl as todoList">
-        <h2>Libretto Universitario</h2>
-          <p><b>Media Aritmetica:</b> {{todoList.media()/todoList.count() | number:2}} <b>Media Ponderata:</b> {{todoList.mediaP()/todoList.totCrediti() | number:2}} <b>Base di Laurea:</b> {{11/3*(todoList.mediaP()/todoList.totCrediti()) | number:2}} 
-        
-        <form ng-submit="todoList.addTodo()"> 
-          <input type="text" ng-model="todoList.todoNome"  size="12" placeholder="aggiungi materia">
-          <input type="text" ng-model="todoList.todoCrediti"  size="2" placeholder="crediti">
-          <input type="text" ng-model="todoList.todoVoto"  size="2" placeholder="voto">
-          <input type="text" ng-model="todoList.todoData"  size="4" placeholder="data">
-          <input type="text" ng-model="todoList.todoProf"  size="10" placeholder="prof">
-          <input type="text" ng-model="todoList.todoNote"  size="10" placeholder="note">
-          <button type="submit" class="btn btn-warning pull-right" value="add"><i class="glyphicon glyphicon-plus"></i></button></p><br>
-        </form>
-
+        <div class="well">
+          <h2>Calendario Didattico</h2>
           <p><table class="table table-striped table-responsive table-bordered table-hover table-condensed">
-            <thead>
-              <tr class="warning">
-                <td><button  ng-click="todoList.archive()"class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></button></td>
-                <td>Materia</td>
-                <td>Crediti</td>
-                <td>Voto</td>
-                <td>Data Esame</td>
-                <td>Prof.</td>
-                <td>Note</td>
-                <td></td>
+            <tbody><thead>
+              <tr class="warning"><td>Lunedì</td>
+                <td>Martedì</td>
+                <td>Mercoledì</td>
+                <td>Giovedì</td>
+                <td>Venerdì</td>
+                <td>Sabato</td>
               </tr>
-              </thead>
-              <tbody>
-              <tr ng-repeat="todo in todoList.todos">
-                <td><input type="checkbox" ng-model="todo.done"></td>
-                <td><span class="done-{{todo.done}}">{{todo.nome}}</span></td>
-                <td><span class="done-{{todo.done}}">{{todo.crediti}}</span></td>
-                <td><span class="done-{{todo.done}}">{{todo.voto}}</span></td>
-                <td><span class="done-{{todo.done}}">{{todo.data}}</span></td>
-                <td><span class="done-{{todo.done}}">{{todo.prof}}</span></td>
-                <td><span class="done-{{todo.done}}">{{todo.note}}</span></td>
-                <td><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button></td>
-              </tr>
-            </tbody>
-            </table>
-          </p>
-          </div>
+            </thead>
+            <tr><td>8.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>9.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>10.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>11.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>12.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>13.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>14.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>15.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>16.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>17.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr><td>18.00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table></p>
       </div>
+    </div>
 
-        <footer class="footer">
-          <div class="container">
-            <p class="text-muted">Copyright &copy; Salvo Bertoncini 2016</p>
-          </div>
-        </footer>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy; Salvo Bertoncini 2016</p>
+      </div>
+    </footer>
 
 <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -188,6 +235,5 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="js/ie10-viewport-bug-workaround.js"></script>
-
 </body>
 </html>
