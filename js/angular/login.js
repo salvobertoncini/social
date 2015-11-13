@@ -6,7 +6,6 @@ app.controller('loginCtrl', function($scope, $window){
 		var upass = $scope.password;
 		if(upass == 'admin' && uname == 'admin@mango.com'){
 			$window.location.href = "homepage.html";
-			//$location.path('/homepage').replace();
 		}
 		else{
 			alert('username o password errati');
@@ -34,6 +33,7 @@ $scope.utenteRegistrazione={nome:"", cognome:"", password:"", email:"", email2:"
 		$scope.errorColor="success";
 		$scope.errorSimbol="ok";
 		$scope.errorMex="Registrazione effettuata con successo";
+    alert($scope.msg);
 	}
     else{
     	$scope.errorSimbol="remove";

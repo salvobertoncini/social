@@ -15,6 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/timeline.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-<!-- Fixed navbar -->
+  <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -48,7 +49,7 @@
                   <input id="InputSearch" type="text" class="form-control" name="search" placeholder="Search for..." required> 
                   <span class="input-group-addon btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></span>
                 </div>
-                </div>
+              </div>
             </form>
           </li>
         </ul>
@@ -86,13 +87,13 @@
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i><span class="label label-info label-as-badge">3</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università <span class="label label-info label-as-badge">2</span></a></li>
-                <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}} <span class="label label-info label-as-badge">1</span></a></li>
-                <li class="divider"></li>
-                <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
-              </ul>
-            </li>
+            <ul class="dropdown-menu">
+              <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università <span class="label label-info label-as-badge">2</span></a></li>
+              <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}} <span class="label label-info label-as-badge">1</span></a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="profile.png" class="profile-image img-circle" height="18" width="18"> {{data.Name}} <b class="caret"></b></a>
@@ -127,13 +128,18 @@
       </div>
 
       <div class="col-md-9">
-        <div class="well">
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-pencil"></i> Scrivi Post</a></li>
-            <li><a data-toggle="tab" href="#photovideo">Upload <i class="glyphicon glyphicon-picture"></i>  Immagini / <i class="glyphicon glyphicon-facetime-video"></i>  Video</a></li>
-            <li><a data-toggle="tab" href="#file">Upload <i class="glyphicon glyphicon-file"></i> File</a></li>
-            <li class="divisor"></li>
-          </ul>
+          <!-- /.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong><i class="glyphicon glyphicon-leaf"></i> Pubblica</strong>
+            </div>
+          <div class="panel-body">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-edit"></i> Scrivi Post</a></li>
+              <li><a data-toggle="tab" href="#photovideo">Upload <i class="glyphicon glyphicon-picture"></i>  Immagini / <i class="glyphicon glyphicon-play-circle"></i>  Video</a></li>
+              <li><a data-toggle="tab" href="#file">Upload <i class="glyphicon glyphicon-file"></i> File</a></li>
+              <li class="divisor"></li>
+            </ul>
 
             <div class="tab-content">
               <div id="home" class="tab-pane fade in active">
@@ -151,25 +157,139 @@
                 <h4>Inserisci <i class="glyphicon glyphicon-picture"></i>  / <i class="glyphicon glyphicon-facetime-video"></i></h4>
                 <p>Seleziona e carica file.
                   <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
-                <br></p>
-                <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
-              </div>
-              <div id="file" class="tab-pane fade">
-                <h4>Inserisci <i class="glyphicon glyphicon-file"></i></h4>
-                <p>Seleziona e carica file.
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
-                <br></p>
-                <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
+                  <br></p>
+                  <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
+                </div>
+                <div id="file" class="tab-pane fade">
+                  <h4>Inserisci <i class="glyphicon glyphicon-file"></i></h4>
+                  <p>Seleziona e carica file.
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Carica</button>
+                    <br></p>
+                    <p><button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Pubblica</button></p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-        <div class="well">
-          <h2>{{ Caricamento Contenuti }}</h2>
-          <p>{{ Caricamento dei contenuti, leggendo file BSON salvati in MongoDB tramite node.js, e visualizzandoli qui grazie ad AngularJS }}</p>
+
+            <!-- /.panel -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong><i class="glyphicon glyphicon-blackboard"></i> Lavagna</strong>
+              </div>
+              <!-- /.panel-heading -->
+              <div class="panel-body">
+                <ul class="timeline">
+                  <li>
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                          <img src="profile.png" class="profile-image img-circle" height="25" width="25"> {{data.Name}}
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-dashboard"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                        <hr>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Rispondi</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                    <div class="timeline-badge warning"><i class="glyphicon glyphicon-edit"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                          <img src="profile.png" class="profile-image img-circle" height="25" width="25"> {{data.Name}}
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-dashboard"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.</p>
+                      </div>
+                      <hr>
+                      <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Rispondi</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="timeline-badge warning"><i class="glyphicon glyphicon-picture"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                          <img src="profile.png" class="profile-image img-circle" height="25" width="25"> {{data.Name}}
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-dashboard"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                        <hr>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Rispondi</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                    <div class="timeline-badge warning"><i class="glyphicon glyphicon-play-circle"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                          <img src="profile.png" class="profile-image img-circle" height="25" width="25"> {{data.Name}}
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-dashboard"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
+                        <hr>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Rispondi</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="timeline-badge warning"><i class="glyphicon glyphicon-file"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt obcaecati, quaerat tempore officia voluptas debitis consectetur culpa amet, accusamus dolorum fugiat, animi dicta aperiam, enim incidunt quisquam maxime neque eaque.</p><hr>
+                      </div>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Rispondi</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+          </div>
         </div>
       </div>
-    </div>
 
       <footer class="footer">
         <div class="container">

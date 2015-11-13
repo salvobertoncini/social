@@ -25,7 +25,7 @@
   <script src="js/angular-route.min.js"></script>
   <script src="js/angular-resource.min.js"></script>
 
-  <script src= "angular/login.js"></script>
+  <script src= "js/angular/login.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -75,6 +75,7 @@
           <img alt="Mango" src="logo.png" class="">
           <h1>Benvenuto in Mango.</h1>
           <h2>Il Social Network per gli Studenti dell'Università degli Studi di Messina.</h2>
+          <button class="btn btn-warning"><i class="glyphicon glyphicon-play-circle"></i> Scopri di più</button>
           </div>
         </center>
     </div>
@@ -118,6 +119,12 @@
           <div class="form-group">
             <div class="input-group date">
               <input type="date" class="input-append date form-control" name="InputBirthday" id="InputBirthday" placeholder="Compleanno" ng-model="utenteRegistrazione.compleanno" required>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input id="InputDipartimento" type="text" class="form-control" name="InputDipartimento" value="" placeholder="Dipartimento" ng-model="utenteRegistrazione.dipartimento" required> 
               <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
             </div>
           </div>
