@@ -164,6 +164,22 @@
     </div>
 
     <div class="col-md-9">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong><i class="glyphicon glyphicon-th-large"></i> Gruppo Esempio</strong>
+          <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-option-horizontal"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Aggiungi Collega</a></li>
+              <li><a href="#"><i class="glyphicon glyphicon-pencil"></i> Modifica Gruppo</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="glyphicon glyphicon-trash"></i> Elimina Gruppo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- /.panel -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -211,18 +227,18 @@
           <!-- timeline -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <strong><i class="glyphicon glyphicon-blackboard"></i> Lavagna</strong>
+              <strong><i class="glyphicon glyphicon-th-large"></i> Dashboard Gruppo</strong>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
               <ul class="timeline">
                 <li>
-                  <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                  <div class="timeline-badge warning"><i class="glyphicon glyphicon-edit"></i>
                   </div>
                   <div class="timeline-panel">
                     <div class="timeline-heading">
                       <h4 class="timeline-title">
-                        {{data.nomeDipartimento}}
+                        <img src="profile.png" class="profile-image img-circle" height="25" width="25"> {{data.Name}}
                       </h4>
                       <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
                     </div>

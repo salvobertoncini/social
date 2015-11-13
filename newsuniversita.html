@@ -15,6 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/timeline.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -46,7 +47,7 @@
             <form class="navbar-form navbar-left" role="search">
               <div class="form-group">
                 <div class="input-group">
-                  <input id="InputSearch" type="text" class="form-control" name="search" placeholder="Search for..." required> 
+                  <input id="InputSearch" type="text" class="form-control" name="search" placeholder="Ricerca..." required> 
                   <span class="input-group-addon btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></span>
                 </div>
                 </div>
@@ -89,7 +90,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-education"></i></a>
               <ul class="dropdown-menu">
                 <li><a href="newsuniversita.html"><i class="glyphicon glyphicon-education"></i> News Università</a></li>
-                <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News Dip. {{data.NomeDipartimento}}</a></li>
+                <li><a href="newsdip.html"><i class="glyphicon glyphicon-education"></i> News {{data.nomeDipartimento}}</a></li>
                 <li class="divider"></li>
                 <li><a href="#"><i class="glyphicon glyphicon-plus "></i> Aggiungi Dipartimento</a></li>
               </ul>
@@ -115,23 +116,136 @@
 
     <div class="container">
       <div class="col-md-3">
-        <h3><a href="#"><img src="profile.png" class="profile-image img-circle" height="30" width="30"> {{data.Name}}</a></h3>
-        <p><a href="#">{{Profile Page}}</a></p>
-        <p><a href="#"><i class="glyphicon glyphicon-pencil"></i> Edit {{data.Name}} Profile</a></p>
+        <h3><a href="profilepage.html"><img src="profile.png" class="profile-image img-circle" height="30" width="30"> {{data.Name}}</a></h3>
         <h4><a href="calendario.html"><i class="glyphicon glyphicon-calendar"></i> Calendario Lezioni</a></h4>
         <h4><a href="libretto.html"><i class="glyphicon glyphicon-list-alt"></i> Libretto Universitario</a></h4>
         <h4><a href="navette.html"><i class="glyphicon glyphicon-time"></i> Orari Navette</a></h4>
-        <h4><a href="#"><i class="glyphicon glyphicon-th-large"></i> Gruppi</a></h4>
+        <h4><a href="group.html"><i class="glyphicon glyphicon-th-large"></i> {{data.Group}}</a></h4>
         <h5><a href="#"><i class="glyphicon glyphicon-plus"></i> Crea Gruppi</a></h5>
         <p><a href="#">{{Group 1}}</a></p>
         <p><a href="#">{{Group 2}}</a></p>
       </div>
 
       <div class="col-md-9">
-        <div class="well">
-          <h2>{{ Caricamento Contenuti }}</h2>
-          <p>{{ Caricamento dei contenuti, leggendo file BSON salvati in MongoDB tramite node.js, e visualizzandoli qui grazie ad AngularJS }}</p>
-        </div>
+        <!-- timeline -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong><i class="glyphicon glyphicon-education"></i> News Università</strong>
+              </div>
+              <!-- /.panel-heading -->
+              <div class="panel-body">
+                <ul class="timeline">
+                  <li>
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                     Università
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                        <hr>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Commenta</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                     Università
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.</p>
+                      </div>
+                      <hr>
+                      <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Commenta</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                     Università
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                        <hr>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Commenta</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                     Università
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
+                        <hr>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Commenta</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-education"></i>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                     Università
+                        </h4>
+                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                      </div>
+                      <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt obcaecati, quaerat tempore officia voluptas debitis consectetur culpa amet, accusamus dolorum fugiat, animi dicta aperiam, enim incidunt quisquam maxime neque eaque.</p><hr>
+                      </div>
+                        <p>
+                          <a href="#"><i class="glyphicon glyphicon-comment"></i> Commenta</a>
+                          &nbsp&nbsp
+                          <a href="#"><i class="glyphicon glyphicon-grain"></i> Diffondi </a>
+                        </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+          </div>
       </div>
     </div>
 
