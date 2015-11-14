@@ -61,7 +61,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i><span class="label label-warning label-as-badge">1</span></a>
             <ul class="dropdown-menu">
               <center>
-                <li><img class="img-circle" src="http://placehold.it/30x30"> {{data.Name}}</li> 
+                <li><img class="img-circle" src="jacksparrow.jpg" height="50" width="50"> <strong>Jack Sparrow</strong></li> 
                 <li>Aggiungi Collega <br></li>
                 <li>
                   <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-ok-sign"></i></button>
@@ -347,6 +347,11 @@
                             <strong>Tony Stark</strong>
                             <div class="btn-group pull-right">
                               <button type="button" class="btn btn-warning btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-remove"></i></b>
+                              </button>
+                            </div>
+                            <div class="btn-group pull-right">
+                              <button type="button" class="btn btn-warning btn-xs dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-plus"></i></b>
                               </button>
                               <ul class="dropdown-menu slidedown">
@@ -461,6 +466,11 @@
                               <div class="chat-panel panel-warning">
                                 <div class="panel-heading">
                                   <strong>Jack Sparrow</strong>
+                                  <div class="btn-group pull-right">
+                                    <button type="button" class="btn btn-warning btn-xs dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-remove"></i></b>
+                                    </button>
+                                  </div>
                                   <div class="btn-group pull-right">
                                     <button type="button" class="btn btn-warning btn-xs dropdown-toggle" data-toggle="dropdown">
                                       <i class="glyphicon glyphicon-plus"></i>
@@ -655,9 +665,19 @@
                                           </a>
                                         </ul>
                                       </div>
-                                      <!-- /.panel-body -->
-                                      <!-- /.panel .chat-panel -->
                                     </div>
+                                    <div class="panel-footer">
+                                      <div class="input-group">
+                                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Cerca..." />
+                                        <span class="input-group-btn">
+                                          <button class="btn btn-warning btn-sm" id="btn-chat">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                          </button>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <!-- /.panel-body -->
+                                    <!-- /.panel .chat-panel -->
                                   </ul>
                                 </li>
                               </ul>
